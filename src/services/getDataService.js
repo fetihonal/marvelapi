@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const marvelURL = 'https://gateway.marvel.com/v1/public/',
-  apiKey = `apikey=344d40df0c8cc373141c1dc321fae9cf`,
-  hash = "bd0722d5750b6362d5ba0212ca36726b"
+  apiKey = `apikey=2980233bedd4bdb696f352f1455b28cc`,
+  hash = "fcd422f5bb3626708ec33b0efa258d2a"
 
 export default function useGetData(options) {
   const [data, setData] = useState({ characters: [], maxPage: 0 });
@@ -14,15 +14,15 @@ export default function useGetData(options) {
     sortName,
     limit,
   } = Object.assign({
-    offset,
+
     name: '',
     exactMatch: false,
     sortName: '',
     limit: 30,
   }, options);
 
-  let url =
-    `${marvelURL}characters?${apiKey}&offset=${offset}&orderBy=${sortName}name&limit=${limit}hash=${hash}`;
+  const url =
+    `${marvelURL}characters?ts=1&${apiKey}&offset=${offset}&orderBy=${sortName}name&limit=${limit}hash=${hash}`;
   if (name) {
     if (exactMatch) { url += `&name=${name}`; }
     else { url += `&nameStartsWith=${name}`; }
