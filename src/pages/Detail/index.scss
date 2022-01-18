@@ -1,0 +1,30 @@
+.detailCard{
+    .imgWrapper{
+        border-radius: 5px;
+        border:1px solid #111;
+    }
+    .name{
+        font-size:36px;
+        color:#e62429;
+        font-weight: 900;
+        
+    }
+    .title{
+        margin: 10px 0;
+       font-size:24px;
+       font-weight: 900;
+    }
+    .comicsItem{
+        padding:10px;
+        border-radius: 5px;
+        border:1px solid #111;
+        margin-bottom:5px;
+        cursor: pointer;
+        display: block;
+        color:#111;
+        &:hover{
+            background-color: #111;
+            color:#fff;
+        }
+    };
+}

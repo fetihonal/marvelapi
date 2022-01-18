@@ -1,0 +1,98 @@
+.characterCard{
+    background-color: white;
+    
+    height:100%;
+    background: #e62429;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    .imgWrapper{
+        height: 210px;
+        margin: 0;
+        position: relative;
+        background-color: #fff;
+        &::after{
+            height: 4px;
+            content: "";
+            background-color: #e62429;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    img{
+        transform: scaleX(1);
+        transition: all .2s linear;
+        overflow: hidden;
+        object-position: top center;
+        display: block;
+        margin: 0;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: center center;
+        object-position: center center;
+        padding: 0;
+        width: 100%;
+        height: 100%;  
+    }
+    a{
+        display: block;
+        color:#111;
+        text-decoration: none;
+        font-size: 16px;
+    }
+    .cardBody{
+        overflow: hidden;
+        position: relative;
+        font-weight: bold;
+        background: #151515;
+        color: #e62429;
+        -webkit-transition: color .3s;
+        transition: color .3s;
+        height:100px;
+        padding:10px 20px;
+        vertical-align: middle;
+        z-index: 30;
+        &:before {
+            background: #e62429;
+            bottom: 100%;
+            content: "";
+            height: 100%;
+            left: 0;
+            position: absolute; 
+            transition-timing-function: cubic-bezier(.75,0,.125,1);
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s,-webkit-transform .3s;
+            width: 100%;
+            z-index: -1;
+        }
+        &:after {
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+            border-right-color: #fff;
+            border-style: solid;
+            border-top-color: transparent;
+            border-width: 12px 12px 0 0;
+            bottom: 0;
+            content: "";
+            position: absolute;
+            right: 0;
+            top: auto;
+            z-index: 40;
+        }
+    }
+    &:hover{
+        img{
+            transform: scale3d(1.05,1.05,1);
+        }
+        .cardBody{
+            color:#fff;
+            &:before{
+                transform: translate3d(0,100%,0);
+                // z-index: 0;
+            }
+        }
+    }
+}
