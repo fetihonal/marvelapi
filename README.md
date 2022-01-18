@@ -1,4 +1,8 @@
 
+
+## Demo
+
+https://marvelapicase.herokuapp.com/
 # Marvel Api Case
 
 Bu projenin case olarak yapılmıştır.
